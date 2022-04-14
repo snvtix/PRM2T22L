@@ -16,7 +16,7 @@ public class main {
         for(int y=0; y<height; y++){
             for(int x=0; x<width; x++){
                 pixels[x][y]=img.getRGB(x,y);
-                if(pixels[y][x]==(-1)){
+                if(pixels[y][x]==(-16777216)){
                     pixels[y][x]=1;
                 }
                 else{
@@ -29,7 +29,7 @@ public class main {
 
     public static void main(String[] arg) throws IOException {
 
-        int[][] pixels = readImage("D:\\prm2t22l_slepowronska_318847\\src\\pl\\edu\\pw\\elka\\prm2t\\zad4\\obrazek3.png");
+        int[][] pixels = readImage("/home/mion/s/281/nslepowr/Desktop/PRM2T Lab/resources/obrazek3.png");
 
         for(int i=0; i<pixels.length; i++){
             for(int j=0; j<pixels[i].length; j++){
