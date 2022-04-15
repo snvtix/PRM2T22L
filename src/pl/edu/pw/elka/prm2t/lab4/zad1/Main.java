@@ -1,12 +1,15 @@
 package pl.edu.pw.elka.prm2t.lab4.zad1;
 
+// [JW] Zad. 1: 0.5 / 5 p.
+
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class main {
+public class Main {  // [JW] Pierwsza litera nazwy klasy w Javie powinna być wielka.
 
+    // [JW] Lepiej byłoby skorzystać z metody readImage z ogólnodostępnej klasy PRM2TUtil.
     public static int[][] readImage(String pathName) throws IOException {
         BufferedImage img = ImageIO.read(new File(pathName));
         int width = img.getWidth();
@@ -29,7 +32,9 @@ public class main {
 
     public static void main(String[] arg) throws IOException {
 
-        int[][] pixels = readImage("/home/mion/s/281/nslepowr/Desktop/PRM2T Lab/resources/obrazek3.png");
+        // [JW] Podawanie ścieżki względem katalogu projektu (zamiast pełnej ścieżki) umożliwia uruchamianie programu
+        // na różnych komputerach.
+        int[][] pixels = readImage("resources/obrazek3.png");
 
         for(int i=0; i<pixels.length; i++){
             for(int j=0; j<pixels[i].length; j++){
