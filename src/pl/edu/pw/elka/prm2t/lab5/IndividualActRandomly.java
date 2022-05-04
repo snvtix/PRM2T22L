@@ -2,9 +2,6 @@ package pl.edu.pw.elka.prm2t.lab5;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-/**
- * Osobnik podejmujący losowe decyzje
- */
 public class IndividualActRandomly extends Individual {
 
     @Override

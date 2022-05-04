@@ -4,30 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-/**
- * Symulacja mająca na celu porównanie różnych strategii podejmowania decyzji w grze Dylemat więźnia.
- */
 public class Simulation<T extends Individual> {
-    /**
-     * Lista wszystkich symulowanych subpopulacji osobników z konkretną strategią.
-     */
+
     private final static List<Simulation<? extends Individual>> simulations = new ArrayList<>();
 
-    /**
-     * Lista wszystkich osobników.
-     */
     private final static List<Individual> globalPopulation = new ArrayList<>();
 
-    /**
-     * Lista osobników o wybranej strategii.
-     */
     private final List<Individual> subPopulation = new ArrayList<>();
 
-    /**
-     * Tworzy element symulacji - subpopulację osobników o określonej strategii.
-     * @param sizeOfPopulation liczba osobników w tej populacji.
-     * @param creator obiekt tworzący osobniki
-     */
     Simulation(int sizeOfPopulation, IndividualCreator<? extends Individual> creator) {
         for (int n = 0; n < sizeOfPopulation; n++) {
             var individual = creator.create();
@@ -36,10 +20,6 @@ public class Simulation<T extends Individual> {
         }
     }
 
-    /**
-     * Program realizujący symulację.
-     * @param args nieużywane.
-     */
     public static void main(String... args) {
         int nEach = 20;  // Liczba osobników posługujących się daną strategią
 
@@ -48,6 +28,9 @@ public class Simulation<T extends Individual> {
         simulations.add(new Simulation<>(nEach, IndividualAlwaysDefect::new));
         simulations.add(new Simulation<>(nEach, IndividualActRandomly::new));
         simulations.add(new Simulation<>(nEach, IndividualCooperateThenRepeat::new));
+        simulations.add(new Simulation<>(nEach, IndividualDefectThenRepeat::new));
+        simulations.add(new Simulation<>(nEach, IndividualActRandomlyThenRepeat::new));
+        //simulations.add(new Simulation<>(nEach, IndividualCooperateThen::new));
 
         int tSpan = 30000;  // Liczba spotkań na osobnika w ramach całej symulacji
 
@@ -80,10 +63,6 @@ public class Simulation<T extends Individual> {
         return asString();
     }
 
-    /**
-     * Obliczenie średniej liczby punktów osobników w danej populacji.
-     * @return średnia liczba punktów.
-     */
     int averagePoints() {
         int sum = 0;
         for (Individual i : subPopulation) {
