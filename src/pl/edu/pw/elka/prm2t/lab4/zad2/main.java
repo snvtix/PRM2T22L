@@ -44,7 +44,7 @@ public class main {
                     continue;
                 }
                 studenci.put(nazwisko + " " + nrindeksu, tab);
-                srednie.put(nazwisko, srednia);
+                srednie.put(nazwisko, (int) srednia);
             }
             else{
                 System.out.println("koniec");
