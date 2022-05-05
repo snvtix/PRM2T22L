@@ -1,0 +1,8 @@
+Authors = Axelrod, R.; Hamilton, W. D.
+Title = The Evolution of Cooperation
+Year = 1981
+Journal = Science
+Volume = 211
+Issue = 4489
+Pages = 1390-1396
+DOI = https://doi.org/10.1126/science.7466396
