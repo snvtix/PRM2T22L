@@ -11,7 +11,8 @@ public class IndividualActRandomlyThenRepeat extends Individual {
 
     @Override
     public boolean willCooperate(Individual other) {
-        return ThreadLocalRandom.current().nextBoolean();
+        // [JW] Tu należało skorzystać z pamięci, podobnie jak przy "DefectThenRepeat":
+        return memory.getOrDefault(other.id, ThreadLocalRandom.current().nextBoolean());
     }
 
     @Override

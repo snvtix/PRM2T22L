@@ -11,18 +11,24 @@ public class IndividualCooperateThen extends Individual {
     @Override
     public boolean willCooperate(Individual other) {
 
-        if(memory.get(other.id).intValue()<=2){
-            memory.getOrDefault(other.id, 0);
+        // [JW] Trzeba jeszcze sprawdzić, czy w pamięci jest w ogóle klucz other.id (tzn. czy nie jest to pierwsze
+        // spotkanie z osobnikiem other):
+        if(!memory.containsKey(other.id) || memory.get(other.id) < 2){
+            // memory.getOrDefault(other.id, 0);  // [JW] to niepotrzebne
             return true;
         }
-        memory.getOrDefault(other.id, 0);
+        // memory.getOrDefault(other.id, 0);  // [JW] to niepotrzebne
         return false;
     }
 
     @Override
     protected void rememberInteraction(Individual other, boolean otherAction) {
         if(!otherAction){
-            int a = memory.get(other.id).intValue() + 1;
+            // [JW] Tu też trzeba sprawdzić, czy jest w pamięci klucz other.id:
+            int a = 1;
+            if (memory.containsKey(other.id)) {
+                a += memory.get(other.id);
+            }
             memory.put(other.id, a);
         }
         else{
