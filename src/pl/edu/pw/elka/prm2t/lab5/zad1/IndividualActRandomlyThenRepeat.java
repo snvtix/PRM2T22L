@@ -1,9 +1,11 @@
-package pl.edu.pw.elka.prm2t.lab5;
+package pl.edu.pw.elka.prm2t.lab5.zad1;
+
+import pl.edu.pw.elka.prm2t.lab5.zad1.Individual;
 
 import java.util.HashMap;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class IndividualActRandomlyThenRepeat extends Individual{
+public class IndividualActRandomlyThenRepeat extends Individual {
 
     private final HashMap<Long, Boolean> memory = new HashMap<>();
 

@@ -1,4 +1,4 @@
-package pl.edu.pw.elka.prm2t.lab5;
+package pl.edu.pw.elka.prm2t.lab5.zad1;
 
 public enum StrategyOutcome {
 

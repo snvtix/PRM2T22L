@@ -1,13 +1,14 @@
-package pl.edu.pw.elka.prm2t.lab5;
+package pl.edu.pw.elka.prm2t.lab5.zad1;
 
-/**
- * Osobnik realizujący strategię "zawsze współpracuj"
- */
-public class IndividualAlwaysCooperate extends Individual {
+import pl.edu.pw.elka.prm2t.lab5.zad1.Individual;
+
+import java.util.concurrent.ThreadLocalRandom;
+
+public class IndividualActRandomly extends Individual {
 
     @Override
     public boolean willCooperate(Individual other) {
-        return true;
+        return ThreadLocalRandom.current().nextBoolean();
     }
 
     @Override
@@ -21,6 +22,6 @@ public class IndividualAlwaysCooperate extends Individual {
     }
 
     public String asString() {
-        return "Always cooperate";
+        return "Act randomly";
     }
 }

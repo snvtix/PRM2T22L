@@ -1,16 +1,15 @@
-package pl.edu.pw.elka.prm2t.lab5;
+package pl.edu.pw.elka.prm2t.lab5.zad1;
+import pl.edu.pw.elka.prm2t.lab5.zad1.Individual;
+
 import java.util.HashMap;
 
-public class IndividualCooperateThenRepeat extends Individual {
+public class IndividualDefectThenRepeat extends Individual {
 
     private final HashMap<Long, Boolean> memory = new HashMap<>();
 
     @Override
     public boolean willCooperate(Individual other) {
-
-        // Jeśli z danym osobnikiem nastąpiło już spotkanie, wybierz to samo, co on przy ostatnim spotkaniu.
-        // W przeciwnym przypadku - wybierz "współpracę".
-        return memory.getOrDefault(other.id, true);
+        return memory.getOrDefault(other.id, false);
     }
 
     @Override
@@ -24,6 +23,6 @@ public class IndividualCooperateThenRepeat extends Individual {
     }
 
     public String asString() {
-        return "Cooperate once then repeat";
+        return "Defect once then repeat";
     }
 }

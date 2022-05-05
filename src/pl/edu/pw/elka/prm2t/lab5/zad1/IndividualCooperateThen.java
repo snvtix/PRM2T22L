@@ -1,8 +1,10 @@
-package pl.edu.pw.elka.prm2t.lab5;
+package pl.edu.pw.elka.prm2t.lab5.zad1;
+
+import pl.edu.pw.elka.prm2t.lab5.zad1.Individual;
 
 import java.util.HashMap;
 
-public class IndividualCooperateThen extends Individual{
+public class IndividualCooperateThen extends Individual {
 
     private final HashMap<Long, Integer> memory = new HashMap<>();
 

@@ -1,12 +1,15 @@
-package pl.edu.pw.elka.prm2t.lab5;
+package pl.edu.pw.elka.prm2t.lab5.zad1;
 
-import java.util.concurrent.ThreadLocalRandom;
+import pl.edu.pw.elka.prm2t.lab5.zad1.Individual;
 
-public class IndividualActRandomly extends Individual {
+/**
+ * Osobnik realizujący strategię "zawsze zdradzaj"
+ */
+public class IndividualAlwaysDefect extends Individual {
 
     @Override
     public boolean willCooperate(Individual other) {
-        return ThreadLocalRandom.current().nextBoolean();
+        return false;
     }
 
     @Override
@@ -20,6 +23,6 @@ public class IndividualActRandomly extends Individual {
     }
 
     public String asString() {
-        return "Act randomly";
+        return "Always defect";
     }
 }

@@ -1,13 +1,15 @@
-package pl.edu.pw.elka.prm2t.lab5;
+package pl.edu.pw.elka.prm2t.lab5.zad1;
+
+import pl.edu.pw.elka.prm2t.lab5.zad1.Individual;
 
 /**
- * Osobnik realizujący strategię "zawsze zdradzaj"
+ * Osobnik realizujący strategię "zawsze współpracuj"
  */
-public class IndividualAlwaysDefect extends Individual {
+public class IndividualAlwaysCooperate extends Individual {
 
     @Override
     public boolean willCooperate(Individual other) {
-        return false;
+        return true;
     }
 
     @Override
@@ -21,6 +23,6 @@ public class IndividualAlwaysDefect extends Individual {
     }
 
     public String asString() {
-        return "Always defect";
+        return "Always cooperate";
     }
 }

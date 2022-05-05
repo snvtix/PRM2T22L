@@ -1,8 +1,10 @@
-package pl.edu.pw.elka.prm2t.lab5;
+package pl.edu.pw.elka.prm2t.lab5.zad1;
+
+import pl.edu.pw.elka.prm2t.lab5.zad1.Individual;
 
 import java.util.HashMap;
 
-public class IndividualActRandomlyThen extends Individual{
+public class IndividualActRandomlyThen extends Individual {
 
     private final HashMap<Long, Boolean> memory = new HashMap<>();
     int coop = 0;

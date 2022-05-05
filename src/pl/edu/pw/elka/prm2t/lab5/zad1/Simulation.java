@@ -1,4 +1,4 @@
-package pl.edu.pw.elka.prm2t.lab5;
+package pl.edu.pw.elka.prm2t.lab5.zad1;
 
 import java.util.ArrayList;
 import java.util.List;
