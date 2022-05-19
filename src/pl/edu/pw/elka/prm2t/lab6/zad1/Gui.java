@@ -14,7 +14,7 @@ public class Gui implements ActionListener {
 
     Gui() {
         f = new JFrame("Testowanie danych wejściowych");
-        f.setSize(300, 100);
+        f.setSize(400, 100);
         f.setLayout(new GridLayout());
         button = new JButton("WPISZ");
         button.addActionListener(this);
