@@ -5,39 +5,41 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static javax.swing.SwingConstants.CENTER;
-
 public class Gui implements ActionListener {
     JFrame f;
-    JLabel label;
-    JLabel label2;
+    JTextField text;
+    String input = " ";
     JButton button;
 
     Gui() {
         f = new JFrame("Testowanie danych wejściowych");
-        f.setSize(350, 150);
+        f.setSize(300, 100);
         f.setLayout(new FlowLayout());
-        label = new JLabel("Żeby przetestować dane, wciśnij:", CENTER);
         button = new JButton("WPISZ");
-        f.add(label);
+        text = new JTextField(input);
         f.add(button);
+        f.add(text);
         button.addActionListener(this);
-        f.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setVisible(true);
-        //nie moge zamknac gui, ale chyba nie trzeba??
+    }
+
+    public static boolean isNumeric(String s) {
+        try {
+            Double.parseDouble(s);
+            return true;
+        } catch(NumberFormatException e) {
+            return false;
+        }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         while(true) {
-            String input = JOptionPane.showInputDialog("Wpisz liczbe");
-            //tu ma byc dobry if
-            if (input.equals("1")) {
+            input = JOptionPane.showInputDialog("Wpisz liczbe");
+            if (isNumeric(input)) {
                 JOptionPane.showMessageDialog(f, "Jest to wartość numeryczna");
-                label2= new JLabel(input);
-                label2.setHorizontalAlignment(SwingConstants.CENTER);
-                f.add(label2);
-                //tu wpisuje do okna wartosc
+                text.setText(input);
                 break;
             } else {
                 JOptionPane.showMessageDialog(f, "Nie jest to wartość numeryczna, powtórz czynność");
