@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.concurrent.Flow;
 
 public class Gui implements ActionListener {
     JFrame f;
@@ -14,12 +15,13 @@ public class Gui implements ActionListener {
     Gui() {
         f = new JFrame("Testowanie danych wejściowych");
         f.setSize(300, 100);
-        f.setLayout(new FlowLayout());
+        f.setLayout(new GridLayout());
         button = new JButton("WPISZ");
+        button.addActionListener(this);
         text = new JTextField(input);
+        text.setHorizontalAlignment(SwingConstants.CENTER);
         f.add(button);
         f.add(text);
-        button.addActionListener(this);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setVisible(true);
     }
@@ -41,7 +43,8 @@ public class Gui implements ActionListener {
                 JOptionPane.showMessageDialog(f, "Jest to wartość numeryczna");
                 text.setText(input);
                 break;
-            } else {
+            }
+            else {
                 JOptionPane.showMessageDialog(f, "Nie jest to wartość numeryczna, powtórz czynność");
             }
         }
