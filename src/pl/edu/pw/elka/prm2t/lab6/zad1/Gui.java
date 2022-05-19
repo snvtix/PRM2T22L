@@ -4,9 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.concurrent.Flow;
 
-public class Gui implements ActionListener {
+public class  Gui implements ActionListener {
     JFrame f;
     JTextField text;
     String input = " ";
@@ -19,6 +18,7 @@ public class Gui implements ActionListener {
         button = new JButton("WPISZ");
         button.addActionListener(this);
         text = new JTextField(input);
+        text.setEnabled(false);
         text.setHorizontalAlignment(SwingConstants.CENTER);
         f.add(button);
         f.add(text);
