@@ -1,2 +1,2 @@
-# PRM2T22_Ślepowrońska_318847
+# PRM2T22L
 Praca w trakcie semestru z przedmiotu Programowanie 2
